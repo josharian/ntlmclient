@@ -16,7 +16,7 @@ jobs:
       imageName: 'libgit2/trusty-amd64:latest'
       environmentVariables: |
        CC=gcc
-       CMAKE_OPTIONS=-DCRYPT=openssl
+       CMAKE_OPTIONS=-DCRYPT=openssl -DENABLE_WERROR=ON
        LEAK_CHECK=valgrind
 
 - job: linux_amd64_trusty_gcc_mbedtls
@@ -29,7 +29,7 @@ jobs:
       imageName: 'libgit2/trusty-amd64:latest'
       environmentVariables: |
        CC=gcc
-       CMAKE_OPTIONS=-DCRYPT=mbedtls
+       CMAKE_OPTIONS=-DCRYPT=mbedtls -DENABLE_WERROR=ON
        LEAK_CHECK=valgrind
 
 - job: linux_amd64_trusty_clang_openssl
@@ -42,7 +42,7 @@ jobs:
       imageName: 'libgit2/trusty-amd64:latest'
       environmentVariables: |
        CC=clang
-       CMAKE_OPTIONS=-DCRYPT=openssl
+       CMAKE_OPTIONS=-DCRYPT=openssl -DENABLE_WERROR=ON
        LEAK_CHECK=valgrind
 
 - job: linux_amd64_trusty_clang_mbedtls
@@ -55,7 +55,7 @@ jobs:
       imageName: 'libgit2/trusty-amd64:latest'
       environmentVariables: |
        CC=clang
-       CMAKE_OPTIONS=-DCRYPT=mbedtls
+       CMAKE_OPTIONS=-DCRYPT=mbedtls -DENABLE_WERROR=ON
        LEAK_CHECK=valgrind
 
 - job: macos
@@ -66,5 +66,6 @@ jobs:
   - template: azure-pipelines/bash.yml
     parameters:
       environmentVariables:
+        CMAKE_OPTIONS: -DENABLE_WERROR=ON
         LEAK_CHECK: leaks
 

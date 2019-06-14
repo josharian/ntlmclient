@@ -16,6 +16,7 @@ OPTION(BUILD_LIBRARY "Build the NTLM library" ON)
 OPTION(BUILD_CLI     "Build the command-line interface" ON)
 OPTION(BUILD_TESTS   "Build the test suite" ON)
 OPTION(ENABLE_ASAN   "Enable AddressSanitizer" OFF)
+OPTION(ENABLE_WERROR "Treat warnings as errors" ON)
 
 SET(UNICODE "default" CACHE STRING "Unicode implementation to use; may be 'iconv' or 'builtin'.")
 SET(CRYPT   "default" CACHE STRING "Cryptographic implementation to use; may be 'commoncrypto', 'mbedtls' or 'openssl'.")
