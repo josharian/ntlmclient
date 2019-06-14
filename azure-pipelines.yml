@@ -65,6 +65,6 @@ jobs:
   steps:
   - template: azure-pipelines/bash.yml
     parameters:
-      environmentVariables: |
-       LEAK_CHECK=leaks
+      environmentVariables:
+        LEAK_CHECK: leaks
 
