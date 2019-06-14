@@ -134,6 +134,7 @@ ENABLE_WARNINGS(unused-const-variable)
 ENABLE_WARNINGS(unused-function)
 ENABLE_WARNINGS(format)
 ENABLE_WARNINGS(int-conversion)
+DISABLE_WARNINGS(implicit-fallthrough)
 
 IF(ENABLE_ASAN)
 	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address -ggdb")
